@@ -1,10 +1,10 @@
-import { Geist, Geist_Mono, Roboto } from "next/font/google"
+import { Geist_Mono, Roboto } from "next/font/google"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { QueryProvider } from "@/components/query-provider"
 
 const roboto = Roboto({subsets:['latin'],variable:'--font-sans'})
 
@@ -33,7 +33,9 @@ export default function RootLayout({
         <div className="flex min-h-screen flex-col justify-between">
           <div>
             <Header title="City Data" />
-            <main className="container mx-auto max-w-4xl px-4">{children}</main>
+            <main className="container mx-auto max-w-4xl px-4">
+              <QueryProvider>{children}</QueryProvider>
+            </main>
           </div>
           <Footer
             course="PROG27545 / Web Application Design and Implementation"
