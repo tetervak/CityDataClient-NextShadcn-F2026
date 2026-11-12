@@ -10,9 +10,7 @@ interface CityDetailsPageProps {
   params: Promise<{ id: string }>
 }
 
-export default async function CityDetailsPage({
-  params,
-}: CityDetailsPageProps) {
+export default async function CityDetailsPage({params}: CityDetailsPageProps) {
   const { id } = await params
   const city: City | null = await getCity(id)
 
