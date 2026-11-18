@@ -31,10 +31,10 @@ export default function CityListPage() {
   return (
     <>
       <h1 className="my-4 text-3xl font-bold text-blue-500">City List</h1>
-      {isPending && <p role="status">Loading cities...</p>}
+      {isPending && <p role="status" className="text-green-500 italic">Loading cities...</p>}
       {isError && (
         <div role="alert">
-          <p>Failed to load cities: {error.message}</p>
+          <p className="text-red-500 italic">Error: {error.message}</p>
           <Button className="mt-2" onClick={() => void refetch()}>
             Retry
           </Button>
