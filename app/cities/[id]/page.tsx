@@ -30,10 +30,10 @@ export default function CityDetailsPage({ params }: CityDetailsPageProps) {
   return (
     <>
       <h1 className="my-4 text-3xl font-bold text-blue-500">City Details</h1>
-      {isPending && <p role="status">Loading city...</p>}
+      {isPending && <p role="status" className="text-green-500 italic">Loading city...</p>}
       {isError && (
         <div role="alert">
-          <p>Failed to load city: {error.message}</p>
+          <p className="text-red-500 italic">Error: {error.message}</p>
           <Button className="mt-2" onClick={() => void refetch()}>
             Retry
           </Button>
@@ -41,7 +41,7 @@ export default function CityDetailsPage({ params }: CityDetailsPageProps) {
       )}
       {isSuccess && city === null && (
         <div>
-          <p role="status">City not found.</p>
+          <p role="status" className="text-red-500 italic">City not found.</p>
           <Link href="/">
             <Button className="mt-4">
               <TableIcon />
