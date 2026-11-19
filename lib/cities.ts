@@ -1,6 +1,6 @@
 import type { City } from "@/types/city"
 
-const API_URL = "/api/cities"
+const API_URL = "http://localhost:8080/api/cities"
 
 export async function getCities(): Promise<City[]> {
   const response = await fetch(API_URL, {
